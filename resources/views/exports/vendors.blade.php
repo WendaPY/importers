@@ -1,39 +1,19 @@
 <table>
     <thead>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Comments</th>
-        <th>Products</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
+        @foreach($headers as $header)
+            <th>{{ $header }}</th>
+        @endforeach
     </tr>
     </thead>
     <tbody>
-        @foreach($vendors as $vendor)
+        @foreach($data as $item)
             <tr>
-                <td>
-                    {{ $vendor->id }}
-                </td>
-                <td>
-                    {{ $vendor->name }}
-                </td>
-                <td>
-                    {{ $vendor->phone }}
-                </td>
-                <td>
-                    {{ $vendor->comments }}
-                </td>
-                <td>
-                    {{ $vendor->products->pluck('name')->implode(' / ') }}
-                </td>
-                <td>
-                    {{ $vendor->lat }}
-                </td>
-                <td>
-                    {{ $vendor->lon }}
-                </td>
+                @foreach ($headers as $header)
+                    <td>
+                        {{ $item->{$header} }}
+                    </td>
+                @endforeach
             </tr>
         @endforeach
     </tbody>

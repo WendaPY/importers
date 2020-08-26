@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Libraries\Menu;
+namespace App\Libraries;
 
-use App\Libraries\Menu\Client;
+use Zero\Http\Client;
 
 class ProductsPy extends Client
 {
@@ -12,11 +12,9 @@ class ProductsPy extends Client
     }
 
     /**
-     * Base url for client.
-     *
-     * @return string
+     * @inheritDoc
      */
-    public function baseUri()
+    public function baseUri(): string
     {
         return 'https://productospy.org/api/';
     }

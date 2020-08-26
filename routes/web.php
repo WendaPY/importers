@@ -18,11 +18,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    $client = new Ushahidi('https://py.mapa.frenalacurva.net/api/v3/');
+    // $token = $client->oauth()->access_token;
+    $token = $client->oauthForUser('felix1262@gmail.com', 'FelixAyala!')->access_token;
+    $response = $client->get('csv', [], [
+        'Authorization' => 'Bearer ' . $token,
+    ]);
+    dd($response->results[0]);
+
+    $response = $client->get('exports/jobs?user=me', [], [
+        'Authorization' => 'Bearer ' . $token,
+    ]);
+    dd($response->results);
+
+    $tags = $client->tags()->results;
+    dd($tags);
+
+    $response = $client->forms();
+    dd($response->results);
+
+    // $collection = $client->collectionById(16);
+    // dd($collection);
+
+    $post = $client->posts()->results[0];
+    dd($post);
+});
+
 Route::get('/export', function () {
     return Excel::download(new VendorsExport, 'vendors.csv');
 });
 
-Route::get('/', function () {
+Route::get('/test', function () {
     $client = new ProductsPy;
 
     $vendors = $client->vendors();
