@@ -35,7 +35,7 @@ class CommunityRadioStations extends ETLService
                     "{$feature->properties->frecuencia}MHz",
                 ]),
                 'authorized' => $feature->properties->autorizado,
-                'description' => implode("\n", [
+                'description' => implode("<br>", [
                     "Departamento: {$feature->properties->departamento}",
                     "Localidad: {$feature->properties->localidad}",
                     "Frecuencia: {$feature->properties->frecuencia}MHz",
@@ -43,11 +43,12 @@ class CommunityRadioStations extends ETLService
                 ]),
                 'department' => $feature->properties->departamento,
                 'city' => $feature->properties->localidad,
-                'frequency' => $feature->properties->frecuencia,
                 'source' => 'CONATEL',
                 'link' => "http://umap.openstreetmap.fr/en/map/pymc_349107#16/{$lat}/{$lon}",
                 'lat' => $lat,
                 'lon' => $lon,
+                'agreement' => 'SI, Acepto',
+                'category' => 'Radios Comunitarias',
             ]));
         });
 

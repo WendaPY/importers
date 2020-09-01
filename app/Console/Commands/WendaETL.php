@@ -28,6 +28,7 @@ class WendaETL extends Command
     protected $services = [
         \App\Services\ETL\ParaguayProducts::class,
         \App\Services\ETL\CommunityRadioStations::class,
+        \App\Services\ETL\ParaguayPots::class,
     ];
 
     /**
