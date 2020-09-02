@@ -29,6 +29,7 @@ class WendaETL extends Command
         \App\Services\ETL\ParaguayProducts::class,
         \App\Services\ETL\CommunityRadioStations::class,
         \App\Services\ETL\ParaguayPots::class,
+        \App\Services\ETL\ConcepcionCollege::class,
     ];
 
     /**
