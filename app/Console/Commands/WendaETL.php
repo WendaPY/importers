@@ -30,6 +30,8 @@ class WendaETL extends Command
         \App\Services\ETL\CommunityRadioStations::class,
         \App\Services\ETL\ParaguayPots::class,
         \App\Services\ETL\ConcepcionCollege::class,
+        \App\Services\ETL\BNF::class,
+        \App\Services\ETL\FreeWiFi::class,
     ];
 
     /**
