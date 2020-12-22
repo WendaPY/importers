@@ -32,6 +32,7 @@ class WendaETL extends Command
         \App\Services\ETL\ConcepcionCollege::class,
         \App\Services\ETL\BNF::class,
         \App\Services\ETL\FreeWiFi::class,
+        \App\Services\ETL\CNB::class,
     ];
 
     /**
@@ -50,8 +51,6 @@ class WendaETL extends Command
         // Run selected option
         $service = $this->resolveService($index);
         $service->run();
-
-
 
         return 0;
     }
