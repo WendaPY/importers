@@ -33,6 +33,7 @@ class WendaETL extends Command
         \App\Services\ETL\BNF::class,
         \App\Services\ETL\FreeWiFi::class,
         \App\Services\ETL\CNB::class,
+        \App\Services\ETL\NationalSMB::class,
     ];
 
     /**
